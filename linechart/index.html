@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Line Chart</title>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="https://jkdesu.github.io/d3/">Home</a>
+    </nav>
+
+    <h1>Line Chart</h1>
+    
+    <div id="chart"></div>
+    
+    <div class="explanation">
+        <h2>Line Chart Analysis: Comparing X and Y Value Patterns</h2>
+        
+        <h3>What I Created</h3>
+        <p>I created three different types of visualizations using the same Anscombe datasets:</p>
+        <ul>
+            <li><strong>Scatterplot</strong>: Shows x-y relationships and correlation patterns</li>
+            <li><strong>Bar Chart</strong>: Shows individual data point values and distributions</li>
+            <li><strong>Line Chart</strong>: Shows sequential trends and patterns over data points</li>
+        </ul>
+        
+        <p>Within the line charts, I created multiple variations:</p>
+        <ul>
+            <li><strong>Individual Charts (4 charts)</strong>: `lineChart()` calls - each showing x and y lines for one dataset</li>
+            <li><strong>X-Value Overlay Chart</strong>: `lineChart2()` calls - all 4 datasets' x-values on one chart with basic colors</li>
+            <li><strong>Y-Value Overlay Chart</strong>: `lineChart3()` calls - all 4 datasets' y-values with varied colors, opacity, and stroke weights</li>
+        </ul>
+        
+        <h3>How These Compare to Previous Charts</h3>
+        
+        <h4>Compared to Bar Charts:</h4>
+        <ul>
+            <li><strong>Bar charts</strong> show individual data points clearly but miss relationships</li>
+            <li><strong>Line charts</strong> reveal trends and patterns over the sequence of data points</li>
+            <li><strong>Overlapping lines</strong> allow direct comparison between datasets in ways bar charts cannot</li>
+        </ul>
+        
+        <h4>Compared to Scatterplots:</h4>
+        <ul>
+            <li><strong>Scatterplots</strong> show x-y relationships but don't show the sequence/order of data points</li>
+            <li><strong>Line charts</strong> reveal how values change across the data sequence</li>
+            <li><strong>Overlapping lines</strong> show how different datasets' patterns compare over the same sequence</li>
+        </ul>
+        
+        <h3>What the Y-Value Chart with Varied Encoding Reveals</h3>
+        
+        <h4>Visual Encoding Strategy:</h4>
+        <ul>
+            <li><strong>Color variation</strong> (darkred, navy, darkgreen, purple): Distinguishes between datasets</li>
+            <li><strong>Opacity variation</strong> (0.6 to 0.9): Creates visual hierarchy and shows overlapping patterns</li>
+            <li><strong>Stroke weight variation</strong> (1.5px to 3px): Emphasizes important datasets and creates depth</li>
+        </ul>
+        
+        <h4>What This Highlights:</h4>
+        <ul>
+            <li><strong>Y-value distribution patterns</strong>: How y-values cluster or spread across datasets</li>
+            <li><strong>Sequential trends</strong>: How y-values change across the data sequence</li>
+            <li><strong>Dataset relationships</strong>: Which datasets have similar y-value patterns</li>
+            <li><strong>Visual hierarchy</strong>: Thicker, more opaque lines draw attention to key datasets</li>
+        </ul>
+        
+        <h4>What This Might Obscure:</h4>
+        <ul>
+            <li><strong>Individual data precision</strong>: Exact y-values are harder to read due to overlapping</li>
+            <li><strong>X-y relationships</strong>: Focus on y-values alone misses how x and y interact</li>
+            <li><strong>Outlier identification</strong>: Individual extreme values may be hidden in the overlap</li>
+        </ul>
+        
+        <h3>Improvements Through Graphical Encoding</h3>
+        
+        <h4>Line Weight (Stroke Width):</h4>
+        <ul>
+            <li><strong>Thicker lines</strong> (3px): Draw attention to most important datasets</li>
+            <li><strong>Thinner lines</strong> (1.5px): Show supporting data without overwhelming</li>
+            <li><strong>Varied weights</strong>: Create visual hierarchy and depth perception</li>
+        </ul>
+        
+        <h4>Stroke Color:</h4>
+        <ul>
+            <li><strong>Dark colors</strong> (darkred, navy): Ensure visibility against light backgrounds</li>
+            <li><strong>Distinct hues</strong>: Make it easy to distinguish between datasets</li>
+            <li><strong>Color psychology</strong>: Red for attention, blue for stability, green for growth, purple for uniqueness</li>
+        </ul>
+        
+        <h4>Opacity (Transparency):</h4>
+        <ul>
+            <li><strong>Higher opacity</strong> (0.9): Emphasizes primary datasets</li>
+            <li><strong>Lower opacity</strong> (0.6): Shows secondary data without competing for attention</li>
+            <li><strong>Overlapping transparency</strong>: Reveals where multiple datasets have similar values</li>
+        </ul>
+    </div>
+
+    <script src="d3.js"></script>
+    <script src="linechart.js"></script>
+</body>
+</html>

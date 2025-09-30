@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Pie Chart</title>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="https://jkdesu.github.io/d3/">Home</a>
+    </nav>
+
+    <h1>Pie Chart</h1>
+
+    <div id="chart"></div>
+    
+    <div class="analysis">
+        <h2>Pie Chart Analysis</h2>
+        
+        <h3>Why Pie Charts Are Difficult for This Dataset:</h3>
+        <ul>
+            <li><strong>Individual data points</strong>: Each slice represents one data point, not meaningful categories</li>
+            <li><strong>No clear groupings</strong>: The Anscombe data doesn't have natural categories to group into</li>
+            <li><strong>Arbitrary slice sizes</strong>: Slice sizes are based on x or y values, which don't represent proportions of a whole</li>
+            <li><strong>Hard to compare</strong>: Difficult to compare values across different pie charts</li>
+        </ul>
+        
+        <h3>Better Datasets for Pie Charts:</h3>
+        <ul>
+            <li><strong>Survey responses</strong>: "What is your favorite color?" (Red: 30%, Blue: 25%, Green: 45%)</li>
+            <li><strong>Market share</strong>: Company A: 40%, Company B: 35%, Company C: 25%</li>
+            <li><strong>Budget allocation</strong>: Marketing: 50%, R&D: 30%, Operations: 20%</li>
+            <li><strong>Demographics</strong>: Age groups, gender distribution, geographic regions</li>
+        </ul>
+        
+        <h3>Best Chart Types for Anscombe Data:</h3>
+        <ul>
+            <li><strong>Scatterplots</strong>: Perfect for showing x-y relationships and correlations</li>
+            <li><strong>Line charts</strong>: Great for showing trends and sequential patterns</li>
+            <li><strong>Bar charts</strong>: Good for comparing individual data points and distributions</li>
+            <li><strong>Box plots</strong>: Excellent for showing statistical distributions and outliers</li>
+        </ul>
+        
+        <h3>Key Takeaway:</h3>
+        <p>Pie charts work best when you have <strong>categorical data that represents parts of a whole</strong>. For numerical datasets like Anscombe, <strong>scatterplots and line charts</strong> are much more effective at revealing patterns, relationships, and insights in the data.</p>
+    </div>
+
+    <script src="d3.js"></script>
+    <script src="piechart.js"></script>
+</body>
+</html>

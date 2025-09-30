@@ -52,6 +52,12 @@ function barChart(dataset, column="x", color="steelblue") {
     .attr("font-weight", "bold");
 }
 
-// Example usage:
-barChart(set1, "x", "red");
-barChart(set1, "y", "blue");
+// Create charts for all 4 sets
+var sets = [set1, set2, set3, set4];
+var colors = ["red", "blue", "green", "orange"];
+
+// Create x and y charts for each set
+for (var i = 0; i < sets.length; i++) {
+  barChart(sets[i], "x", colors[i]);
+  barChart(sets[i], "y", colors[i]);
+}
