@@ -35,4 +35,4 @@ function barChart(data, columnInUse, fillColor){
     })
 }
 
-barChart(set1,"y","blue")
+barChart(set1,"y","pink")

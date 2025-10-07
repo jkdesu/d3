@@ -11,12 +11,10 @@ const data = [
 ];
 const categories = ["Entertainment","Social","Utilities","Creativity","Productivity","Travel"]; // keep fixed order
 
-// Color scale per category
 const color = d3.scaleOrdinal()
   .domain(categories)
   .range(d3.schemeTableau10.slice(0, categories.length));
 
-// category checkboxes
 const controls = d3.select('#catControls'); //CatControls: container where all category filters checkboxes get dynamically inserted
 const selected = new Set(categories);  
 controls.selectAll('label')
@@ -66,7 +64,6 @@ function updateBar(){
   y.domain([0, maxY||10]);
   yAxisG.transition().duration(400).call(d3.axisLeft(y).ticks(6));
 
-  // join
   const groups = barsG.selectAll('g.layer').data(stack, d=>d.key);
   groups.enter().append('g').attr('class','layer').attr('fill', d=>color(d.key));
   groups.exit().remove();
@@ -119,10 +116,8 @@ function updatePie(){
 
   const pieData = pie(categoryTotals);
 
-  // Update pie slices
   const slices = svgPie.selectAll('path').data(pieData, d => d.data.category);
   
-  // Enter new slices
   const enter = slices.enter()
     .append('path')
     .attr('fill', d => color(d.data.category))
@@ -134,7 +129,7 @@ function updatePie(){
     .on('mouseleave', hideTip)
     .each(function(d) { this._current = {startAngle: 0, endAngle: 0}; });
 
-  // Update existing + new slices
+
   enter.merge(slices)
     .transition()
     .duration(500)
@@ -143,8 +138,6 @@ function updatePie(){
       this._current = interpolate(1);
       return t => arc(interpolate(t));
     });
-
-  // Remove old slices
   slices.exit()
     .transition()
     .duration(300)
@@ -155,6 +148,5 @@ function updatePie(){
     .remove();
 }
 
-// Initial render
 updateBar();
 updatePie();

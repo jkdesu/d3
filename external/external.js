@@ -46,7 +46,6 @@ function barChart(dataset, column="x", color="steelblue") {
     .attr("width", width)
     .attr("height", height);
 
-  // scale so bars fit in height
   var yScale = d3.scaleLinear()
     .domain([0, d3.max(dataset, d => d[column])])
     .range([0, height-20]);
@@ -61,7 +60,6 @@ function barChart(dataset, column="x", color="steelblue") {
       .attr("height", d => yScale(d[column]))
       .attr("fill", color);
 
-  // label which column is plotted
   svg.append("text")
     .text(column)
     .attr("x", 5)
@@ -82,14 +80,11 @@ Promise.all([jsonData])
    console.log("Set 1:", set1)
    console.log("Set 2:", set2)
    
-   // Create scatterplot
    scatterPlot(set1)
    
-   // Create bar charts for all 4 sets
    var sets = [set1, set2, set3, set4];
-   var colors = ["red", "blue", "green", "orange"];
-   
-   // Create x and y charts for each set
+   var colors = ["pink", "yellow", "green", "orange"];
+
    for (var i = 0; i < sets.length; i++) {
      barChart(sets[i], "x", colors[i]);
      barChart(sets[i], "y", colors[i]);
