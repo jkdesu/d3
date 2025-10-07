@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interactive Screen Time — D3.js (Bar & Pie Chart)</title>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="https://jkdesu.github.io/d3/">Home</a>
+  </nav>
+
+  <header>
+    <h1>My Weekly Screen Time (Sep 14–20, 2025)</h1>
+    <p>Interactive D3 charts: Stacked Bar & Pie Chart</p>
+  </header>
+
+  <div class="wrap">
+    <section class="card" id="barCard">
+      <h2>Stacked Bar — Minutes per Day by Category</h2>
+      <div class="controls" id="catControls"></div>
+      <div class="legend" id="legend"></div>
+      <div id="barChart"></div>
+    </section>
+
+    <section class="card" id="pieCard">
+      <h2>Pie Chart — Total Minutes by Category</h2>
+      <div id="pieChart"></div>
+    </section>
+  </div>
+
+  <div class="tip" id="tooltip"></div>
+
+  <script src="interactivechart.js"></script>
+</body>
+</html>
+
